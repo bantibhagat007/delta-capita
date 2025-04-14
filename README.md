@@ -1,59 +1,109 @@
-# DeltaCapitaProject
+# Dynamic Form Builder Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+This is an Angular application for building and managing dynamic forms with permission controls. The application allows administrators to create, edit, and manage form templates with various field types, while standard users can view and submit form data.
 
-## Development server
+## Features
 
-To start a local development server, run:
+### Form Builder Interface
+- Drag-and-drop interface for building forms with different field types:
+  - Text input (single-line and multi-line)
+  - Dropdown select (with configurable options)
+  - Checkbox groups
+  - Date picker
+  - Radio button groups
+- Configurable field properties:
+  - Field label
+  - Required/optional setting
+  - Help text
+  - Validation rules (min/max length, pattern, etc.)
 
-```bash
-ng serve
-```
+### Form Management
+- List view of created form templates
+- Edit existing templates
+- Preview mode to test forms
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Form Submission
+- Form filling interface for end-users
+- Validation based on configured rules
+- Submission to a mock API
+- Success/error handling
+- View submitted form data
 
-## Code scaffolding
+### Authorization
+- Two user roles:
+  - Admin: Can create, edit, and delete form templates
+  - User: Can only view and fill out forms
+- Authorization check on all relevant actions
+- Login screen with role selection
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Technical Implementation
 
-```bash
-ng generate component component-name
-```
+- Angular 19 with TypeScript
+- Standalone components with a tree-based structure
+- Reactive Forms for form handling
+- NgRx for state management
+- Material UI with a custom rose-pink theme
+- Responsive design
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Project Structure
 
-```bash
-ng generate --help
-```
+- `src/app/features/` - Contains all feature modules
+  - `auth/` - Authentication related components
+  - `forms/` - Form management components
+    - `form-builder/` - Form creation and editing
+    - `form-preview/` - Form preview
+    - `form-submission/` - Form submission
+    - `forms-list/` - List of form templates
+    - `submissions-list/` - View form submissions
+    - `shared/` - Shared components
+- `src/app/store/` - NgRx store implementation
+  - `actions/` - Action definitions
+  - `reducers/` - State reducers
+  - `effects/` - Side effects
+  - `models/` - Data models
+- `src/app/services/` - Application services
+  - `auth.service.ts` - Authentication service
+  - `form.service.ts` - Form data service
 
-## Building
+## Getting Started
 
-To build the project run:
+### Prerequisites
+- Node.js (v18+)
+- npm (v8+)
 
-```bash
-ng build
-```
+### Installation
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Start the development server:
+   ```
+   npm start
+   ```
+4. Navigate to `http://localhost:4200/` in your browser
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Usage
 
-## Running unit tests
+1. Login with either Admin or User role
+2. As an Admin:
+   - Create new form templates
+   - Edit existing templates
+   - View form submissions
+3. As a User:
+   - View available forms
+   - Fill out and submit forms
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Implementation Notes
 
-```bash
-ng test
-```
+- The application uses a mock API service for data persistence
+- Authentication is simulated with local storage
+- Form data is stored in memory (would be replaced with actual API calls in a production application)
 
-## Running end-to-end tests
+## Future Improvements
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Add unit tests for all components
+- Implement end-to-end testing with Cypress or Playwright
+- Add more field types (number, file upload, etc.)
+- Implement form versioning
+- Add form response analytics
