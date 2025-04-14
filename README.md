@@ -1,26 +1,37 @@
-# Dynamic Form Builder Application
+# Delta Capita Dynamic Form Builder
 
-This is an Angular application for building and managing dynamic forms with permission controls. The application allows administrators to create, edit, and manage form templates with various field types, while standard users can view and submit form data.
+A robust Angular-based form builder application that enables dynamic creation, management, and submission of forms with role-based access control. This enterprise-grade solution allows organizations to create custom forms, manage submissions, and control user access through a modern, responsive interface.
 
-## Features
+## Key Features
 
-### Form Builder Interface
-- Drag-and-drop interface for building forms with different field types:
-  - Text input (single-line and multi-line)
-  - Dropdown select (with configurable options)
-  - Checkbox groups
-  - Date picker
+### Form Builder & Management
+- Intuitive drag-and-drop interface for form creation
+- Support for diverse field types:
+  - Text fields (single & multi-line)
+  - Dropdown menus with customizable options
+  - Checkbox groups for multiple selections
+  - Date pickers with format customization
   - Radio button groups
-- Configurable field properties:
-  - Field label
-  - Required/optional setting
-  - Help text
-  - Validation rules (min/max length, pattern, etc.)
+- Advanced field configuration:
+  - Custom validation rules
+  - Conditional field visibility
+  - Required field marking
+  - Helper text and tooltips
+  - Placeholder text
 
-### Form Management
-- List view of created form templates
-- Edit existing templates
-- Preview mode to test forms
+### Security & Access Control
+- Role-based access control (RBAC)
+- Secure authentication system
+- Data validation at multiple levels
+- Session management
+- Audit logging for form changes
+
+### User Experience
+- Responsive design for mobile and desktop
+- Real-time form validation
+- Auto-save functionality
+- Form templates for quick starts
+- Rich text editing capabilities
 
 ### Form Submission
 - Form filling interface for end-users
@@ -28,13 +39,6 @@ This is an Angular application for building and managing dynamic forms with perm
 - Submission to a mock API
 - Success/error handling
 - View submitted form data
-
-### Authorization
-- Two user roles:
-  - Admin: Can create, edit, and delete form templates
-  - User: Can only view and fill out forms
-- Authorization check on all relevant actions
-- Login screen with role selection
 
 ## Technical Implementation
 
@@ -67,21 +71,38 @@ This is an Angular application for building and managing dynamic forms with perm
 
 ## Getting Started
 
-### Prerequisites
-- Node.js (v18+)
-- npm (v8+)
+### System Requirements
+- Node.js (v18.0.0 or higher)
+- npm (v8.0.0 or higher)
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- 2GB RAM minimum
+- 1GB free disk space
 
-### Installation
-1. Clone the repository
-2. Install dependencies:
+### Development Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/delta-capita-project.git
+   cd delta-capita-project
    ```
+2. Install dependencies:
+   ```bash
    npm install
    ```
-3. Start the development server:
-   ```
+3. Start development server:
+   ```bash
    npm start
    ```
-4. Navigate to `http://localhost:4200/` in your browser
+4. Access the application:
+   - URL: http://localhost:4200
+   - Default admin credentials: admin/admin123
+   - Default user credentials: user/user123
+
+### Production Deployment
+1. Build the application:
+   ```bash
+   npm run build --prod
+   ```
+2. Deploy the contents of `dist/delta-capita-project` to your web server
 
 ### Usage
 
@@ -107,3 +128,30 @@ This is an Angular application for building and managing dynamic forms with perm
 - Add more field types (number, file upload, etc.)
 - Implement form versioning
 - Add form response analytics
+
+## Technical Stack
+
+- Frontend Framework: Angular 19
+- State Management: NgRx
+- UI Components: Angular Material
+- Form Handling: Angular Reactive Forms
+- Styling: SCSS with Material theming
+- Build Tools: Angular CLI
+- Package Manager: npm
+- Version Control: Git
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Support
+
+For support and queries, please create an issue in the repository or contact the development team.
